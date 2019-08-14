@@ -1,0 +1,124 @@
+<?php
+/*---------------------------------------------------------*/
+/*------------Created By : Nitin Gautam  -----------------*/
+/*--- For any query mail at nitin.gautam070@gmail.com ---*/
+/*---------------------------------------------------------*/
+?>
+<?php
+    $js_url = Mage::getBaseUrl(Mage_Core_Model_Store::URL_TYPE_JS);
+    $skin_url = Mage::getBaseUrl(Mage_Core_Model_Store::URL_TYPE_SKIN);
+	$slideCollection = Mage::getModel('slider/slider')->getCollection();
+	$configData = Mage::getStoreConfig('slider');
+?>
+<?php if($configData['settings']['enable_slider'] == 1): ?>
+<link rel="stylesheet" type="text/css" href="<?php echo $skin_url ?>frontend/base/default/3DSlider/slider.css" />
+<style>
+.wrapper-slider{
+position: relative;
+width: <?php if($configData['defaultconfig']['slider_width'] > 0): 
+                  echo $configData['defaultconfig']['slider_width'].'px';
+			 else : echo "850px";
+			 endif;?>;
+height: <?php if($configData['defaultconfig']['slider_height'] > 0): 
+                  echo $configData['defaultconfig']['slider_height'].'px';
+			 else : echo "400px";
+			 endif;?>;
+margin: 0 auto;
+}
+.sb-slider img {
+    display: block;
+width: <?php if($configData['defaultconfig']['slider_width'] > 0): 
+                  echo $configData['defaultconfig']['slider_width'].'px';
+			 else : echo "850px";
+			 endif;?>;
+height: <?php if($configData['defaultconfig']['slider_height'] > 0): 
+                  echo $configData['defaultconfig']['slider_height'].'px';
+			 else : echo "400px";
+			 endif;?>;
+			 
+}
+.sb-description {
+width: 98%;
+}
+</style>
+<script type="text/javascript" src="<?php echo $js_url; ?>3DSlider/modernizer.js"></script>
+<script type="text/javascript" src="<?php echo $js_url; ?>3DSlider/jQuery 1.8.2.js"></script>
+<script type="text/javascript" src="<?php echo $js_url; ?>3DSlider/jquery.slicebox.js"></script>
+<script type="text/javascript">
+			$(function() {	
+				var Page = (function() {
+					var $navArrows = $( '#nav-arrows' ).hide(),
+						$shadow = $( '#shadow' ).hide(),
+						slicebox = $( '#sb-slider' ).slicebox( {
+							onReady : function() {
+								$navArrows.show();
+								$shadow.show();
+							},
+							orientation : '<?php echo $configData['settings']['list_style']; ?>',
+							cuboidsRandom : <?php if($configData['settings']['random_slide'] == 1): echo 'true'; else: echo "false"; endif; ?>,
+							disperseFactor : <?php echo $configData['settings']['disperse_factor']; ?>,
+							colorHiddenSides : '<?php if($configData['settings']['hidden_slide_color'] != ""): echo "$configData[settings][hidden_slide_color]"; else: echo "#6d6a63"; endif; ?>',
+							speed : <?php echo $configData['settings']['transition_speed']; ?>,
+							easing : 'ease-out',
+							maxCuboidsCount : <?php echo $configData['settings']['slice_slide_count']; ?>,
+							cuboidsCount : 3,
+							sequentialFactor : <?php echo $configData['settings']['sequential_factor']; ?>,
+							interval: <?php echo $configData['settings']['slide_interval']; ?>,
+							/*autoplay : <?php if($configData['settings']['auto_play'] == 1): echo 'true'; else: echo "false"; endif; ?>,*/
+						} ),
+						init = function() {
+							initEvents();
+						},
+						initEvents = function() {
+							// add navigation events
+							$navArrows.children( ':first' ).on( 'click', function() {
+								slicebox.next();
+								<?php if($configData['settings']['auto_play_after_navigation'] == 1){
+								 echo "slicebox.play();";
+								}
+								?>
+								return false;
+							} );
+							$navArrows.children( ':last' ).on( 'click', function() {
+								slicebox.previous();
+								<?php if($configData['settings']['auto_play_after_navigation'] == 1){
+								 echo "slicebox.play();";
+								}
+								?>
+								return false;
+							} );
+						};
+						return { init : init };
+				})();
+				Page.init();
+			});
+</script>
+<div class="wrapper-slider">
+	<ul id="sb-slider" class="sb-slider">
+	  <?php foreach ($slideCollection as $slide): ?>
+		<li>
+			<?php if ($slide['weblink']){ ?>
+			<a href="<?php echo Mage::getBaseUrl(Mage_Core_Model_Store::URL_TYPE_MEDIA) ."slider/". $slide['filename']?>" title="<?php echo $slide['title']?>" >
+			 <img  src="<?php echo Mage::getBaseUrl(Mage_Core_Model_Store::URL_TYPE_MEDIA) ."slider/". $slide['filename']?>" />
+			</a>
+			<?php }else{ ?>
+			<img  src="<?php echo Mage::getBaseUrl(Mage_Core_Model_Store::URL_TYPE_MEDIA) ."slider/". $slide['filename']?>" />
+			<?php } if($configData['settings']['show_description'] == 1):?>
+					<div class="sb-description">
+						<h3><?php echo $slide['title']; ?></h3>
+						<h3><p><?php echo $slide['content']; ?></p></h3>
+					</div>
+				<?php endif;?>
+         </li>
+        <?php endforeach; ?>	
+	</ul>
+	<?php if($configData['settings']['next_prev'] == 1): ?>
+	<div id="nav-arrows" class="nav-arrows">
+		<a href="#">Next</a>
+		<a href="#">Previous</a>
+    </div>
+	<?php endif; ?>
+	<div id="shadow" class="shadow"></div>
+</div>
+<!-- /wrapper -->
+<?php endif;?>

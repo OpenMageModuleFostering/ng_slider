@@ -1,0 +1,206 @@
+<?xml version="1.0"?>
+<config>
+	<sections>
+	     	<slider translate="label" module="slider">
+			<label>3D-Slider</label>
+			<tab>general</tab>
+			<frontend_type>text</frontend_type>
+			<sort_order>999</sort_order>
+			<show_in_default>1</show_in_default>
+			<show_in_website>0</show_in_website>
+			<show_in_store>0</show_in_store>
+			<groups>
+				<settings translate="label">
+				<label>3D-Slider Settings</label>
+				<frontend_type>text</frontend_type>
+				<sort_order>1</sort_order>
+				<show_in_default>1</show_in_default>
+				<show_in_website>0</show_in_website>
+				<show_in_store>0</show_in_store>
+					<fields>
+					    <enable_slider translate="label, comment">
+							<label>Enable 3D-Slider</label>
+							<comment><![CDATA[Enable/Disable slider]]></comment>
+							<frontend_type>select</frontend_type>
+							<source_model>slider/status</source_model>
+							<sort_order>0</sort_order>
+							<show_in_default>1</show_in_default>
+							<show_in_website>1</show_in_website>
+							<show_in_store>1</show_in_store>
+						</enable_slider>
+						<show_description translate="label, comment">
+							<label>Display Description</label>
+							<comment><![CDATA[show description in front of image]]></comment>
+							<frontend_type>select</frontend_type>
+							<source_model>adminhtml/system_config_source_yesno</source_model>
+							<sort_order>1</sort_order>
+							<show_in_default>1</show_in_default>
+							<show_in_website>1</show_in_website>
+							<show_in_store>1</show_in_store>
+						</show_description>
+				
+						<transition_effect translate="label, comment">
+							<label>Transition Effects</label>
+							<comment><![CDATA[Choice style for effects]]></comment>
+							<frontend_type>select</frontend_type>
+							<source_model>slider/system_config_styles</source_model>
+							<sort_order>2</sort_order>
+							<show_in_default>1</show_in_default>
+							<show_in_website>1</show_in_website>
+							<show_in_store>1</show_in_store>
+						</transition_effect>
+						<auto_play translate="label, comment">
+							<label>Auto Play</label>
+							<comment><![CDATA[Auto start slider]]></comment>
+							<frontend_type>select</frontend_type>
+							<source_model>adminhtml/system_config_source_yesno</source_model>
+							<sort_order>3</sort_order>
+							<show_in_default>1</show_in_default>
+							<show_in_website>1</show_in_website>
+							<show_in_store>1</show_in_store>
+						</auto_play>
+						<auto_play_after_navigation translate="label, comment">
+							<label>Auto Play After Next/Preview Click</label>
+							<comment><![CDATA[Auto start slider]]></comment>
+							<frontend_type>select</frontend_type>
+							<source_model>adminhtml/system_config_source_yesno</source_model>
+							<sort_order>4</sort_order>
+							<show_in_default>1</show_in_default>
+							<show_in_website>1</show_in_website>
+							<show_in_store>1</show_in_store>
+						</auto_play_after_navigation>
+						<random_slide translate="label, comment">
+							<label>Random Slide</label>
+							<comment><![CDATA[if true then the number of slices is going to be random(cuboids Count is overwitten)]]></comment>
+							<frontend_type>select</frontend_type>
+							<source_model>adminhtml/system_config_source_yesno</source_model>
+							<sort_order>5</sort_order>
+							<show_in_default>1</show_in_default>
+							<show_in_website>1</show_in_website>
+							<show_in_store>1</show_in_store>
+						</random_slide>
+						<next_prev translate="label, comment">
+							<label>Display Next/Previous Button</label>
+							<comment><![CDATA[Show next previous button if set to yes]]></comment>
+							<frontend_type>select</frontend_type>
+							<source_model>adminhtml/system_config_source_yesno</source_model>
+							<sort_order>6</sort_order>
+							<show_in_default>1</show_in_default>
+							<show_in_website>1</show_in_website>
+							<show_in_store>1</show_in_store>
+						</next_prev>
+						<paging translate="label, comment">
+							<label>Display Pagination</label>
+							<comment><![CDATA[Show paging if set to yes]]></comment>
+							<frontend_type>select</frontend_type>
+							<source_model>adminhtml/system_config_source_yesno</source_model>
+							<sort_order>7</sort_order>
+							<show_in_default>1</show_in_default>
+							<show_in_website>1</show_in_website>
+							<show_in_store>1</show_in_store>
+						</paging>
+						<hidden_slide_color translate="label, comment">
+							<label>Sliced Side Color</label>
+							<comment><![CDATA[Inner color of sliced sides, Please enter color code]]></comment>
+							<frontend_type>text</frontend_type>
+                            <validate>color</validate>
+							<sort_order>8</sort_order>
+							<show_in_default>1</show_in_default>
+							<show_in_website>1</show_in_website>
+							<show_in_store>1</show_in_store>
+						</hidden_slide_color>
+						<slice_slide_count translate="label, comment">
+							<label>Maximum Slide Slices</label>
+							<comment><![CDATA[Maximum Slices of slide while transition effect]]></comment>
+							<frontend_type>select</frontend_type>
+                            <source_model>slider/system_config_slicecount</source_model>
+							<sort_order>9</sort_order>
+							<show_in_default>1</show_in_default>
+							<show_in_website>1</show_in_website>
+							<show_in_store>1</show_in_store>
+						</slice_slide_count>
+						<disperse_factor translate="label, comment">
+							<label>Disperse Factor</label>
+							<comment><![CDATA[Gap between slides when they slice ]]></comment>
+							<frontend_type>select</frontend_type>
+							<source_model>slider/system_config_factor</source_model>
+							<sort_order>10</sort_order>
+							<show_in_default>1</show_in_default>
+							<show_in_website>1</show_in_website>
+							<show_in_store>1</show_in_store>
+						</disperse_factor>
+						<transition_speed translate="label, comment">
+							<label>Transition Speed</label>
+							<comment><![CDATA[Animation speed]]></comment>
+							<frontend_type>select</frontend_type>
+							<source_model>slider/system_config_speed</source_model>
+							<sort_order>11</sort_order>
+							<show_in_default>1</show_in_default>
+							<show_in_website>1</show_in_website>
+							<show_in_store>1</show_in_store>
+						</transition_speed>
+						<randomslide translate="label, comment">
+							<label>Random Slide</label>
+							<comment><![CDATA[Shuffle slide if set to yes]]></comment>
+							<frontend_type>select</frontend_type>
+							<source_model>adminhtml/system_config_source_yesno</source_model>
+							<sort_order>12</sort_order>
+							<show_in_default>1</show_in_default>
+							<show_in_website>1</show_in_website>
+							<show_in_store>1</show_in_store>
+						</randomslide>
+						<sequential_factor translate="label, comment">
+							<label>Slice Interval</label>
+							<comment><![CDATA[interval between each sliced slide rotation in ms]]></comment>
+							<frontend_type>select</frontend_type>
+							<source_model>slider/system_config_sequentialfactor</source_model>
+							<sort_order>13</sort_order>
+							<show_in_default>1</show_in_default>
+							<show_in_website>1</show_in_website>
+							<show_in_store>1</show_in_store>
+						</sequential_factor>
+						<slide_interval translate="label, comment">
+							<label>Slide Interval</label>
+							<comment><![CDATA[interval between each slide rotation in ms]]></comment>
+							<frontend_type>select</frontend_type>
+							<source_model>slider/system_config_slideinterval</source_model>
+							<sort_order>14</sort_order>
+							<show_in_default>1</show_in_default>
+							<show_in_website>1</show_in_website>
+							<show_in_store>1</show_in_store>
+						</slide_interval>
+					</fields>
+				</settings>
+				 <defaultconfig translate="label">
+                    <label>Default Configuration</label>
+                    <frontend_type>text</frontend_type>
+                    <sort_order>500</sort_order>
+                    <show_in_default>1</show_in_default>
+                    <show_in_website>1</show_in_website>
+                    <show_in_store>1</show_in_store>
+					<!-- List your config values here -->
+                    <fields>
+						<slider_width translate="label, comment">
+							<label>Image width</label>
+							<comment><![CDATA[Unit is px]]></comment>
+							<frontend_type>text</frontend_type>
+							<sort_order>5</sort_order>
+							<show_in_default>1</show_in_default>
+							<show_in_website>1</show_in_website>
+							<show_in_store>1</show_in_store>
+						</slider_width>
+						<slider_height translate="label, comment">
+							<label>Image height</label>
+							<comment><![CDATA[Unit is px]]></comment>
+							<frontend_type>text</frontend_type>
+							<sort_order>6</sort_order>
+							<show_in_default>1</show_in_default>
+							<show_in_website>1</show_in_website>
+							<show_in_store>1</show_in_store>
+						</slider_height>
+                    </fields>
+                </defaultconfig>
+			</groups>
+		</slider>
+	</sections>
+</config>

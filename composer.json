@@ -1,0 +1,16 @@
+{
+    "name": "OpenMageModuleFostering/NG_Slider",
+    "type": "magento-module",
+    "license": "Open-Software-License-(OSL)",
+    "homepage": "",
+    "description": "Looking for a 3D slider for your magento store? NG Slider is the solution for for that.",
+    "authors": [
+    {
+        "name": "Nitin Gautam",
+        "email": "nitin.gautam070@gmail.com"
+    }
+],
+    "suggest": {
+        "magento-hackathon/magento-composer-installer": "*"
+    }
+}

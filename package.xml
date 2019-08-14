@@ -1,0 +1,44 @@
+<?xml version="1.0"?>
+<package>
+    <name>NG_Slider</name>
+    <version>1.0.0</version>
+    <stability>stable</stability>
+    <license uri="http://opensource.org/licenses/osl-3.0.php">Open Software License (OSL)</license>
+    <channel>community</channel>
+    <extends/>
+    <summary>Looking for a 3D slider for your magento store? NG Slider is the solution for for that.</summary>
+    <description>&lt;div&gt;&#xD;
+&lt;h3&gt;To Use this 3D Slider for your Store, Please Follow the below Steps.&lt;/h3&gt;&#xD;
+&lt;ul&gt;&#xD;
+&lt;li&gt;Step1:- Login to your admin panel and navigate to system---&gt; Magento Connect--&gt; Magento Connect Manager.&lt;/li&gt;&#xD;
+&lt;li&gt;Step2:- Please cross check that &amp;quot;compilation&amp;quot; should be disable, and before installing this extension take backup of your &#xD;
+            site for good practise..&lt;/li&gt;&#xD;
+&lt;li&gt;Step3:- Copy the extension key from above and paste it in text box and click install.&lt;/li&gt;&#xD;
+&lt;li&gt;Step4:- Clear the cache after installing the extension and logout/login to your admin panel.&lt;/li&gt;&#xD;
+&lt;li&gt;Step5:- Now navigate to 3D Slider menu from top and click manage slides(submenu). And Add sliders from here.&lt;/li&gt;&#xD;
+&lt;li&gt;Step6:- Put below line of code in homepage cms from admin.&#xD;
+            {{block type=&amp;quot;slider/slider&amp;quot; template=&amp;quot;slider/slider.phtml&amp;quot;}}&lt;/li&gt;&#xD;
+&lt;/ul&gt;&#xD;
+&lt;div&gt;Above are all steps to use this extension for your store. along with this This slider have variour controll options in admin. navigate to System-&gt; Configuration-&gt; 3D-Slider.&lt;/div&gt;&#xD;
+&#xD;
+&lt;h3&gt;Features &lt;/h3&gt;&#xD;
+&lt;ul&gt;&#xD;
+&lt;li&gt; Multiple 3D Transitions &#x2013; Horizontal, Vertical or Random. &lt;/li&gt;&#xD;
+&lt;li&gt; Show/Hide 3D slide description Information.&lt;/li&gt;&#xD;
+&lt;li&gt; Slides Navigation.&lt;/li&gt;&#xD;
+&lt;li&gt; Define Number of Cubes for Split Design.&lt;/li&gt;&#xD;
+&lt;li&gt; Define gap between the Cubes.&lt;/li&gt;&#xD;
+&lt;li&gt; Create Unlimited Slides.&lt;/li&gt;&#xD;
+&lt;li&gt; Total Admin control.&lt;/li&gt;&#xD;
+&lt;li&gt; Slider Height &amp;amp; Width manageable fro admin.&lt;/li&gt;&#xD;
+&lt;/ul&gt;&#xD;
+Note: "compilation" should be disable.&#xD;
+&lt;/div&gt;</description>
+    <notes>Make Sure that "compilation" is disable before installing this extension.</notes>
+    <authors><author><name>Nitin Gautam</name><user>nitin_gautam700</user><email>nitin.gautam070@gmail.com</email></author></authors>
+    <date>2014-10-29</date>
+    <time>11:44:19</time>
+    <contents><target name="magelocal"><dir name="NG"><dir name="Slider"><dir name="Block"><dir name="Adminhtml"><dir name="Slider"><dir name="Edit"><file name="Form.php" hash="892367cbf277c4e4f6f570bec6c690cf"/><dir name="Tab"><file name="Form.php" hash="0c69069db5ac0e5d64e23804e789462a"/></dir><file name="Tabs.php" hash="245ec798ed14f15df68330bfd9070ce5"/></dir><file name="Edit.php" hash="1bf8965e15ad73e48c9da5dee3efbc58"/><file name="Grid.php" hash="288a9548770dd4e4d0e1edd534397f2d"/></dir><file name="Slider.php" hash="8a04fa2079f0eb3559b4f7b1b7245d5e"/></dir><file name="Slider.php" hash="665e1eec1229198cdd7dd8a1897701c1"/></dir><dir name="Helper"><file name="Data.php" hash="860859d4fdaf6ccc9cce80e8a9dd9c1a"/></dir><dir name="Model"><dir name="Mysql4"><dir name="Slider"><file name="Collection.php" hash="143f4eca28c4cd249c71bda59e38194f"/></dir><file name="Slider.php" hash="0a4b3ce8518b88dfa3de26190c52f6ca"/></dir><file name="Slider.php" hash="1284922fd4d46f7a4610a981cf33ea22"/><file name="Status.php" hash="1c90003bf23e7e488f5aed0ba08b68ae"/><dir name="System"><dir name="Config"><file name="Factor.php" hash="6f196a84813371b313c890e0ef43e38b"/><file name="Sequentialfactor.php" hash="30104d7eea71a534fc3d7587eae6dbcb"/><file name="Slicecount.php" hash="287623ea5018a17302fe2cd9c05d7bd6"/><file name="Slideinterval.php" hash="2ed9041c9b453cddab5f6ba07a460d67"/><file name="Speed.php" hash="b38ce9df59bfd81dba8888625ea15dea"/><file name="Styles.php" hash="b90e95265be98af3ed6e93574b02b54a"/></dir></dir></dir><dir name="controllers"><dir name="Adminhtml"><file name="SliderController.php" hash="98db4a2c7403451c14fea5d01e4e6519"/></dir><file name="IndexController.php" hash="355bd31cf71fe4c4162a308a8d6577b2"/></dir><dir name="etc"><file name="config.xml" hash="cc956722db8a83e3c999363af54d5b9f"/><file name="system.xml" hash="a7ddcf0b818d7468700fa460ef4d3cd4"/></dir><dir name="sql"><dir name="slider_setup"><file name="mysql4-install-1.0.3.php" hash="2b9ce3efe36f24feb2856fe9adf5d51a"/><file name="mysql4-install-2.0.0.php" hash="8272e52affed7dbf5021675cb97e760a"/><file name="mysql4-upgrade-1.0.3-2.0.0.php" hash="c8ef75d116314c33be932461c1611002"/></dir></dir></dir></dir></target><target name="magedesign"><dir name="adminhtml"><dir name="default"><dir name="default"><dir name="layout"><file name="slider.xml" hash="2e81aea78d38d3be5ff7d22710409c67"/></dir></dir></dir></dir><dir name="frontend"><dir name="base"><dir name="default"><dir name="layout"><file name="slider.xml" hash="80017b38e382f4ac2b43a89e21d5dfac"/></dir><dir name="template"><dir name="slider"><file name="slider.phtml" hash="46b941dfe0cb731b6cddba904507a413"/></dir></dir></dir></dir></dir></target><target name="mageweb"><dir name="js"><dir name="3DSlider"><file name="arrow.gif" hash="5034704a76cd55c1cbcbc58ea6bf523f"/><file name="cross.gif" hash="ba9a274b9323753cd95bc3b1eb2f4e5f"/><file name="hs.png" hash="fefa1a03d92ebad25c88dca94a0b63db"/><file name="hv.png" hash="990d71cada17da100653636cf8490884"/><file name="jQuery 1.8.2.js" hash="1d14cd3798bc4d6aaf65dd625870723f"/><file name="jquery.slicebox.js" hash="cf1720c7b33d8b3abf831c6c461901b4"/><file name="jscolor.js" hash="8340a7254d2fec94963c0871413a1ebc"/><file name="modernizer.js" hash="1de5419fea2749e57b75d17d89b0f6c1"/></dir></dir></target><target name="mageskin"><dir name="frontend"><dir name="base"><dir name="default"><dir name="3DSlider"><dir name="images"><file name="Thumbs.db" hash="ae9cf32c397198f92760403646394ef0"/><file name="fancy_deboss.png" hash="647461ca575c1acb4545c75b3b873f6e"/><file name="nav.png" hash="67d4f9b1ac475ca5d4b888a958aa0efd"/><file name="options.png" hash="c36d2842c215db25de1da6af166d575d"/><file name="shadow.png" hash="e92473a8b27e9c1c4d9b614327b86533"/><file name=".DS_Store" hash="194577a7e20bdcc7afbb718f502c134c"/></dir><file name="slider.css" hash="bf0cd19230adc50ec5a994c839dfb125"/></dir></dir></dir></dir></target><target name="mageetc"><dir name="modules"><file name="NG_Slider.xml" hash="bb16ea7de94b224e55e4748ab5a04266"/></dir></target></contents>
+    <compatible/>
+    <dependencies><required><php><min>5.1.0</min><max>5.6.0</max></php></required></dependencies>
+</package>
