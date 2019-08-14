@@ -3,9 +3,7 @@
     "type": "magento-module",
     "license": "Open-Software-License-(OSL)",
     "homepage": "",
-    "description": "Looking for a 3D slider extension for your magento store? NG Slider is available for for that.
-3D slider having smooth 3D transitions effects and overall admin controls.
-This can be easily install in you magento Store.",
+    "description": "NG 3D Slider is a slider In which the transition appears like 3D effect while changing between slides.",
     "authors": [
     {
         "name": "Nitin Gautam",

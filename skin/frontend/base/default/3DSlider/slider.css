@@ -167,13 +167,14 @@
 }
 
 .nav-dots {
-	text-align: center;
-	position: absolute;
-	bottom: -5px;
-	height: 30px;
-	width: 100%;
-	left: 0;
-	display: none;
+    bottom: -50px;
+    clear: both;
+    display: none;
+    height: 30px;
+    left: 0;
+    position: absolute;
+    text-align: center;
+    width: 100%;
 }
 
 .nav-dots span {

@@ -9,6 +9,7 @@
     $skin_url = Mage::getBaseUrl(Mage_Core_Model_Store::URL_TYPE_SKIN);
 	$slideCollection = Mage::getModel('slider/slider')->getCollection();
 	$configData = Mage::getStoreConfig('slider');
+	//echo "<pre>"; print_r($configData['settings']);
 ?>
 <?php if($configData['settings']['enable_slider'] == 1): ?>
 <link rel="stylesheet" type="text/css" href="<?php echo $skin_url ?>frontend/base/default/3DSlider/slider.css" />
@@ -48,13 +49,16 @@ width: 98%;
 			$(function() {	
 				var Page = (function() {
 					var $navArrows = $( '#nav-arrows' ).hide(),
+					    $navDots = $( '#nav-dots' ).hide(),
+						$nav = $navDots.children( 'span' ),
 						$shadow = $( '#shadow' ).hide(),
 						slicebox = $( '#sb-slider' ).slicebox( {
 							onReady : function() {
 								$navArrows.show();
+								<?php if($configData['settings']['paging'] == 1){ ?>$navDots.show(); <?php } ?>
 								$shadow.show();
 							},
-							orientation : '<?php echo $configData['settings']['list_style']; ?>',
+							orientation : '<?php echo $configData['settings']['transition_effect']; ?>',
 							cuboidsRandom : <?php if($configData['settings']['random_slide'] == 1): echo 'true'; else: echo "false"; endif; ?>,
 							disperseFactor : <?php echo $configData['settings']['disperse_factor']; ?>,
 							colorHiddenSides : '<?php if($configData['settings']['hidden_slide_color'] != ""): echo "$configData[settings][hidden_slide_color]"; else: echo "#6d6a63"; endif; ?>',
@@ -64,7 +68,11 @@ width: 98%;
 							cuboidsCount : 3,
 							sequentialFactor : <?php echo $configData['settings']['sequential_factor']; ?>,
 							interval: <?php echo $configData['settings']['slide_interval']; ?>,
-							/*autoplay : <?php if($configData['settings']['auto_play'] == 1): echo 'true'; else: echo "false"; endif; ?>,*/
+							autoplay : <?php if($configData['settings']['auto_play'] == 1): echo 'true'; else: echo "false"; endif; ?>,
+							onBeforeChange : function( pos ) {
+								$nav.removeClass( 'nav-dot-current' );
+								$nav.eq( pos ).addClass( 'nav-dot-current' );
+							}
 						} ),
 						init = function() {
 							initEvents();
@@ -87,6 +95,26 @@ width: 98%;
 								?>
 								return false;
 							} );
+							
+							$nav.each( function( i ) {
+							
+								$( this ).on( 'click', function( event ) {
+									
+									var $dot = $( this );
+									
+									if( !slicebox.isActive() ) {
+
+										$nav.removeClass( 'nav-dot-current' );
+										$dot.addClass( 'nav-dot-current' );
+									
+									}
+									
+									slicebox.jump( i + 1 );
+									return false;
+								
+								} );
+								
+							} );
 						};
 						return { init : init };
 				})();
@@ -95,6 +123,7 @@ width: 98%;
 </script>
 <div class="wrapper-slider">
 	<ul id="sb-slider" class="sb-slider">
+	
 	  <?php foreach ($slideCollection as $slide): ?>
 		<li>
 			<?php if ($slide['weblink']){ ?>
@@ -119,6 +148,16 @@ width: 98%;
     </div>
 	<?php endif; ?>
 	<div id="shadow" class="shadow"></div>
+		<?php if($configData['settings']['paging'] == 1){ ?>
+		<div id="nav-dots" class="nav-dots">
+		    <span class="nav-dot-current"></span>
+			<?php $slide_count = count($slideCollection);
+              for($i=1; $i<$slide_count; $i++){
+			     echo "<span></span>";
+			  }
+			?>
+		</div>
+		<?php } ?>
 </div>
 <!-- /wrapper -->
 <?php endif;?>
