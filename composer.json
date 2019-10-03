@@ -1,7 +1,7 @@
 {
-    "name": "OpenMageModuleFostering\/NG_Slider",
+    "name": "openmage-module-fostering\/ng_slider",
     "type": "magento-module",
-    "license": "Open-Software-License-(OSL)",
+    "license": "OSL-3.0",
     "homepage": "",
     "description": "NG 3D Slider is a slider In which the transition appears like 3D effect while changing between slides. ",
     "authors": [

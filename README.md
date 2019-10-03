@@ -1,3 +1,5 @@
+
+
 ## Original Package Description
 
 NG 3D Slider is a slider In which the transition appears like 3D effect while changing between slides. 
